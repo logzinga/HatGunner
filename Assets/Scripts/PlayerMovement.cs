@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public Rigidbody rb;
+
+    public float forwardForce = 1000f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +16,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKey("W")) {
+            rb.AddForce(forwardForce * Time.deltaTime, 0, 0);
+        }
     }
 }
