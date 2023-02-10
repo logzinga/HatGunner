@@ -25,8 +25,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(forwardForce * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey ("s")) {
+        if (Input.GetKey("s")) {
             rb.AddForce(-forwardForce * Time.deltaTime, 0, 0);
+        }
+
+        if (Input.GetKey("a")) {
+            rb.AddForce(0, 0, sidewaysForce * Time.deltaTime);
         }
     }
 }
