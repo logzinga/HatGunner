@@ -1,36 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
 
-    public Rigidbody rb;
+    public NetworkVariable<int> randomNumber = new NetworkVariable<int>(1);
 
-    public float forwardForce = 1000f;
+    private void Update() {
 
-    public float sidewaysForce = 1000f;
+        if (!IsOwner) return;
+
+        Vector3 moveDir = new Vector3(0, 0, 0);
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        if (Input.GetKey(KeyCode.W)) moveDir.z = +1f;
+        if (Input.GetKey(KeyCode.S)) moveDir.z = -1f;
+        if (Input.GetKey(KeyCode.A)) moveDir.x = -1f;
+        if (Input.GetKey(KeyCode.D)) moveDir.x = +1f;
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (Input.GetKey("w")) {
-            rb.AddForce(forwardForce * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKey("s")) {
-            rb.AddForce(-forwardForce * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKey("a")) {
-            rb.AddForce(0, 0, sidewaysForce * Time.deltaTime);
-        }
+        float moveSpeed = 3f;
+        transform.position += moveDir * moveSpeed * Time.deltaTime;
     }
 }
