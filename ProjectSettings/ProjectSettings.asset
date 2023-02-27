@@ -616,7 +616,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: NOBLE_CONNECT;NOBLE_CONNECT_1;NOBLE_CONNECT_1_37
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
