@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981107769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6845a83acce19754b928d0bee185ea3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProtocolType: 0
@@ -1453,15 +1453,6 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
-  Config:
-    Region: 0
-    ForceRelayOnly: 0
-    EnableIPv6: 1
-    RequestTimeout: 0.2
-    RelayRequestTimeout: 0.1
-    RelayRefreshMaxAttempts: 8
-    RelayLifetime: 60
-    RelayRefreshTime: 30
 --- !u!1 &2108671896
 GameObject:
   m_ObjectHideFlags: 0
