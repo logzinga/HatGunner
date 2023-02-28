@@ -708,11 +708,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 26dffccf-44b6-4a28-b046-cf585564f8ce
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Hat Gunner
+  organizationId: logansimic49
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
