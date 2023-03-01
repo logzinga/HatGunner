@@ -14,9 +14,11 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport;
 using Unity.Networking.Transport.Relay;
 using NetworkEvent = Unity.Networking.Transport.NetworkEvent;
+using UnityEngine.UI;
 
 public class ServerMenu : MonoBehaviour
 {
+
     private async void Start() {
         await UnityServices.InitializeAsync();
 
@@ -48,7 +50,33 @@ public class ServerMenu : MonoBehaviour
         }
     }
 
-    public void JoinGame () {
-        NetworkManager.Singleton.StartClient();
+    public InputField joinTextCode;
+
+    public void ServerJoinButton()
+    {
+        string joinCode = joinTextCode.text;
+        JoinGame(joinCode);
     }
+
+    public async Task<string> JoinGame(string joinCode)
+    {
+        try
+        {
+            Debug.Log("Joining server with: " + joinCode);
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+
+            RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            NetworkManager.Singleton.StartClient();
+
+            return joinCode;
+        }
+        catch (RelayServiceException e)
+        {
+            Debug.Log(e);
+            return null;
+        }
+}
+
 }
