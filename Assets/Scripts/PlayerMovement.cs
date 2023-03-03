@@ -15,10 +15,11 @@ public class PlayerMovement : NetworkBehaviour
         Vector3 moveDir = new Vector3(0, 0, 0);
 
 
-        if (Input.GetKey(KeyCode.W)) moveDir.z = +1f;
-        if (Input.GetKey(KeyCode.S)) moveDir.z = -1f;
-        if (Input.GetKey(KeyCode.A)) moveDir.x = -1f;
-        if (Input.GetKey(KeyCode.D)) moveDir.x = +1f;
+        if (Input.GetKey(KeyCode.W)) moveDir.z = +3f;
+        if (Input.GetKey(KeyCode.S)) moveDir.z = -3f;
+        if (Input.GetKey(KeyCode.A)) moveDir.x = -3f;
+        if (Input.GetKey(KeyCode.D)) moveDir.x = +3f;
+        if (Input.GetKey(KeyCode.Space)) moveDir.y = +3f;
 
         float moveSpeed = 3f;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
