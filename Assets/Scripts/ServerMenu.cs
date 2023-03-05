@@ -42,7 +42,8 @@ public class ServerMenu : MonoBehaviour
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
             NetworkManager.Singleton.StartHost();
-
+            
+            joinCodeText.text = joinCode;
             return joinCode;
         } catch (RelayServiceException e) {
             Debug.Log(e);
@@ -51,6 +52,8 @@ public class ServerMenu : MonoBehaviour
     }
 
     public InputField joinTextCode;
+
+    public Text joinCodeText;
 
     public void ServerJoinButton()
     {
@@ -70,6 +73,7 @@ public class ServerMenu : MonoBehaviour
 
             NetworkManager.Singleton.StartClient();
 
+            
             return joinCode;
         }
         catch (RelayServiceException e)
