@@ -33,7 +33,7 @@ public class ServerMenu : MonoBehaviour
     }
     public async Task<string> HostGame () {
         try {
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(50);
             string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
             Debug.Log(joinCode);
