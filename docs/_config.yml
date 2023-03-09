@@ -1,1 +1,3 @@
 remote_theme: logzinga/cayman-hatrunner2
+plugins:
+- jekyll-remote-theme
