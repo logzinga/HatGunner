@@ -1,2 +1,2 @@
 # Hat Gunner
-jfvbka;vhsnvkjsdbfdsnmf
+Website to download the latest stable version on Hat Gunner.
