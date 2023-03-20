@@ -22,6 +22,7 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKey(KeyCode.Space)) moveDir.y = +3f;
         if (Input.GetKey(KeyCode.Escape)) {
             Application.Quit();
+            Debug.Log("meow");
         }
 
         float moveSpeed = 3f;
