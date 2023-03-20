@@ -20,6 +20,9 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKey(KeyCode.A)) moveDir.x = -3f;
         if (Input.GetKey(KeyCode.D)) moveDir.x = +3f;
         if (Input.GetKey(KeyCode.Space)) moveDir.y = +3f;
+        if (Input.GetKey(KeyCode.Escape)) {
+            Application.Quit();
+        }
 
         float moveSpeed = 3f;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
