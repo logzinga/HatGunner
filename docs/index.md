@@ -15,4 +15,4 @@ Project Timeline:
 
 - Multiplayer Implementation (Week 3 - 7)
 
-
+- Project Finalizing (Week 8 - 10)
